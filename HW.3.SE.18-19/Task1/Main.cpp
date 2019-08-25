@@ -96,6 +96,6 @@ int main()
 	Environment::getInstance()->print();
 
 	Environment::releaseInstance();
-	std::cin.get();
+	
 	return 0;
 }
