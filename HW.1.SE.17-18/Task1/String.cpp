@@ -132,7 +132,7 @@ const char *String::get() const
 	return arr;
 }
 
-size_t String::len() 
+size_t String::len() const
 {
 	return size;
 }
