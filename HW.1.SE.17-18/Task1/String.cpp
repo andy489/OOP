@@ -142,7 +142,7 @@ std::ostream & operator<<(std::ostream& stream, const String& str)
 	stream << str.arr;
 	return stream;
 }
-const char String::operator[](size_t pos) 
+const char String::operator[](size_t pos) const
 {
 	if (pos >= size) return 0;
 	return arr[pos];
