@@ -24,7 +24,7 @@ public:
 	const char* get() const; /* Return pointer to the array where the string is */
 	void set(const char* str); /* Set the string to equal a char array */
 
-	size_t len(); /* Return the length of the string */
+	size_t len() const; /* Return the length of the string */
 	String subStr(size_t from, size_t to); /* Return a string containing a substring between the 2 indexes */
 	void append(const String& str); /* Append a string to the end of this */
 	String concat(const String& str); /* Concatenate this and the new string and return a new string object containing the concatenation */
