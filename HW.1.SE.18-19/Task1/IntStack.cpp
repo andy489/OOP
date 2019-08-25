@@ -1,5 +1,5 @@
 #include "IntStack.h"
-void Stack::push(int value)
+void IntStack::push(int value)
 {
 	if (isEmpty()) top = new node(value, nullptr);
 	else
@@ -8,7 +8,7 @@ void Stack::push(int value)
 		top = newNode;
 	}
 }
-void Stack::pop()
+void IntStack::pop()
 {
 	if (!isEmpty())
 	{
@@ -17,7 +17,7 @@ void Stack::pop()
 		top = temp;
 	}
 }
-const int Stack::peek() const
+const int IntStack::peek() const
 {
 	if (!isEmpty())
 	{
@@ -25,7 +25,7 @@ const int Stack::peek() const
 	}
 	return 1;
 }
-void Stack::print() const
+void IntStack::print() const
 {
 	if (!isEmpty())
 	{
@@ -39,18 +39,18 @@ void Stack::print() const
 	else cout << "Stack is empty!";
 	cout << "\n\n";
 }
-bool Stack::isEmpty() const
+bool IntStack::isEmpty() const
 {
 	if (top == nullptr) return true;
 	else return false;
 }
-Stack::Stack()
+IntStack::IntStack()
 {
 	top = nullptr;
 }
-Stack::Stack(const Stack & s)
+IntStack::IntStack(const IntStack & s)
 {
-	Stack temp;
+	IntStack temp;
 	node* n = s.top;
 	while (n)
 	{
@@ -63,13 +63,13 @@ Stack::Stack(const Stack & s)
 		temp.pop();
 	}
 }
-Stack::~Stack()
+IntStack::~IntStack()
 {
 	while (!isEmpty()) pop();
 }
-Stack sortStack(const Stack &in_stack)
+IntStack sortStack(const IntStack &in_stack)
 {
-	Stack stack(in_stack);
+	IntStack stack(in_stack);
 
 	if (stack.isEmpty())
 	{
@@ -82,7 +82,7 @@ Stack sortStack(const Stack &in_stack)
 		while (swap)
 		{
 			swap = false;
-			Stack currentStack;
+			IntStack currentStack;
 
 			int prev = stack.peek();
 			stack.pop();
