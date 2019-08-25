@@ -76,14 +76,21 @@ int main()
 
 	Entity* entity = Environment::getInstance()->getClosestAliveEntity(p1, ENTITY_MOB);
 
-	std::cout << "--------------------------------------------------------------\nTHE CLOSEST ALIVE MOB TO PLAYER \"BARBARIAN\":\n~if this mob is not attacked\n(with less than 80 health, after calling \"attackAllMobs\"),\nthen none of the mobs will be attacked~\n*this check we make easy, becaouse all entities have an unique id*\n--------------------------------------------------------------\n";
+	std::cout << "--------------------------------------------------------------\n;";
+	std::cout << "THE CLOSEST ALIVE MOB TO PLAYER \"BARBARIAN\":\n~if this mob is not attacked\n";
+	std::cout << "(with less than 80 health, after calling \"attackAllMobs\"),\n";
+	std::cout << "then none of the mobs will be attacked~\n*this check we make easy,";
+	std::cout << "becaouse all entities have an unique id*\n";
+	std::cout << "--------------------------------------------------------------\n";
 	if (entity)
 	{
 		entity->print();
 	}
 	std::cout << "--------------------------------------------------------------\n";
 
-	std::cout << "ATTACKING ALL MOBS WITH DISTANCE LESS THAN 5 TO THE BARBARIAN:\n~if the distance is less than 5 the mob will be attacked~\n--------------------------------------------------------------\n";
+	std::cout << "ATTACKING ALL MOBS WITH DISTANCE LESS THAN 5 TO THE BARBARIAN:\n";
+	std::cout << "~if the distance is less than 5 the mob will be attacked~\n";
+	std::cout << "--------------------------------------------------------------\n";
 
 	attackAllMobs((*Environment::getInstance()), p1);
 	Environment::getInstance()->print();
