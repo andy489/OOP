@@ -12,20 +12,20 @@ struct node
 		this->prev = prev;
 	}
 };
-class Stack
+class IntStack
 {
 private:
 	node* top = nullptr;
 public:
-	Stack();
-	Stack(const Stack& s);
+	IntStack();
+	IntStack(const IntStack& s);
 
-void push(int value);
+	void push(int value);
 
 	void pop();
-	int peek()const;
-	void print()const;
-	bool isEmpty()const;
-	~Stack();
+	const int peek() const;
+	void print() const;
+	bool isEmpty() const;
+	~IntStack();
 };
-Stack sortStack(const Stack &in_stack);
+IntStack sortStack(const IntStack &in_stack);
