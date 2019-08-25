@@ -20,7 +20,7 @@ public:
 	friend std::ostream &operator<<(std::ostream& stream, const String& str); /* Overwrite the << operator to work correctly */
 	friend std::istream &operator>>(std::istream& stream, String& str); /* Overwrite the >> operator to work correctly */
 	
-	const char operator[](size_t pos); /* Return the character on the given position */
+	const char operator[](size_t pos) const; /* Return the character on the given position */
 	const char* get() const; /* Return pointer to the array where the string is */
 	void set(const char* str); /* Set the string to equal a char array */
 
