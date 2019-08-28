@@ -24,9 +24,12 @@ public:
 
 	Pair& operator=(const Pair& p)
 	{
+		if (this != &p)
+		{
 		setKey(p.getKey());
 		setValue(p.getValue());
-		return *this;
+		}
+		return *this;		
 	}
 
 	Pair(const Pair& p)
