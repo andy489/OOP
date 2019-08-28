@@ -102,9 +102,7 @@ DNSCache & DNSCache::operator=(const DNSCache &c)
 	if (this != &c)
 	{
 		delete[] this->records;
-
-		for (size_t i = 0; i < c.getSize(); i++)
-			this->add(c[i]);
+		for (size_t i = 0; i < c.getSize(); i++) this->add(c[i]);
 	}
 	return *this;
 }
@@ -116,6 +114,7 @@ void DNSCache::operator+=(const DNSRecord &p)
 
 DNSRecord DNSCache::operator[](const size_t index) const
 {
-	if (index >= getSize()) return DNSRecord();
-	else return records[index];
+	size_t n = getSize();
+	if (index >= 0 && index < n ) return records[index];
+	else return DNSRecord() ;
 }
