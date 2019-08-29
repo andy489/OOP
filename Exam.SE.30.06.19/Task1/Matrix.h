@@ -40,17 +40,17 @@ inline void Matrix<T>::copy(const Matrix<T>& m)
 	unsigned rows = m.getRows();
 	unsigned cols = m.getCols();
 	
-	elements = new T*[rows];
+	this->elements = new T*[rows];
 	for (unsigned i = 0; i < rows; i++)
 	{
-		elements[i] = new T[cols];
+		this->elements[i] = new T[cols];
 	}	
 
 	for (unsigned i = 0; i < rows; i++)
 	{
 		for (unsigned j = 0; j < cols; j++)
 		{
-			elements[i][j] = m.elements[i][j];
+			this->elements[i][j] = m.elements[i][j];
 		}
 	}
 }
@@ -58,10 +58,17 @@ inline void Matrix<T>::copy(const Matrix<T>& m)
 template<typename T>
 inline Matrix<T>::Matrix()
 {
-	elements = new T*[2];
+	this->elements = new T*[2];
 	for (unsigned i = 0; i < 2; i++)
 	{
-		elements[i] = new T[2];
+		this->elements[i] = new T[2];
+	}
+	for (size_t i = 0; i < 2; i++)
+	{
+		for (size_t j = 0; j < 2; j++)
+		{
+			this->elements[i][j] = T();
+		}
 	}
 	setRows(2);
 	setCols(2);
