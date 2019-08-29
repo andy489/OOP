@@ -24,8 +24,8 @@ public:
 	void setRows(const unsigned rows);
 	void setCols(const unsigned rows);
 
-	const size_t getRows()const;
-	const size_t getCols()const;
+	const unsigned getRows()const;
+	const unsigned getCols()const;
 
 	void setAt(const unsigned x, const unsigned y, const T element);
 	T getAt(const unsigned x, const unsigned y)const;
