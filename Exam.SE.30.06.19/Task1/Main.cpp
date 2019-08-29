@@ -18,7 +18,7 @@ void test()
 	cpyMatrix.print();
 
 	cout << "Checking operator= :\n\n";
-	Matrix<double> equalMatrix(cpyMatrix);
+	Matrix<double> equalMatrix=parMatrix;
 	equalMatrix.print();
 
 	cout << "Testing setAt() function:\n\n";
