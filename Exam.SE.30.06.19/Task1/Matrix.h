@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <type_traits>
 using namespace std;
 
 template<typename T>
@@ -10,21 +11,21 @@ class Matrix
 	unsigned rows;
 	unsigned cols;
 
-	void copy(const Matrix<T>* &m);
+	void copy(const Matrix<T> &m);
 
 public:
 
 	Matrix(); // default constructor
 	Matrix(const unsigned rows, const unsigned cols);  // constructor with parameters
-	Matrix(const Matrix<T>* &m); // copy constructor
+	Matrix(const Matrix<T> &m); // copy constructor
 	Matrix<T> & operator=(const Matrix<T>& m); // operator =
 	~Matrix(); // destructor
 
 	void setRows(const unsigned rows);
 	void setCols(const unsigned rows);
 
-	const unsigned getRows()const;
-	const unsigned getCols()const;
+	const size_t getRows()const;
+	const size_t getCols()const;
 
 	void setAt(const unsigned x, const unsigned y, const T element);
 	T getAt(const unsigned x, const unsigned y)const;
@@ -35,13 +36,20 @@ public:
 };
 
 template<typename T>
-inline void Matrix<T>::copy(const Matrix<T>*& m)
+inline void Matrix<T>::copy(const Matrix<T>& m)
 {
-	setRows(m.getRows);
-	setCols(m.getCols);
-	for (unsigned i = 0; i < getRows(); i++)
+	unsigned rows = m.getRows();
+	unsigned cols = m.getCols();
+	
+	elements = new T*[rows];
+	for (unsigned i = 0; i < rows; i++)
 	{
-		for (unsigned j = 0; j < getCols(); j++)
+		elements[i] = new T[cols];
+	}	
+
+	for (unsigned i = 0; i < rows; i++)
+	{
+		for (unsigned j = 0; j < cols; j++)
 		{
 			elements[i][j] = m.elements[i][j];
 		}
@@ -81,7 +89,7 @@ inline Matrix<T>::Matrix(const unsigned rows, const unsigned cols)
 }
 
 template<typename T>
-inline Matrix<T>::Matrix(const Matrix<T>* &m)
+inline Matrix<T>::Matrix(const Matrix<T> &m)
 {
 	copy(m);
 }
@@ -96,7 +104,12 @@ inline Matrix<T>& Matrix<T>::operator=(const Matrix<T>& m)
 template<typename T>
 inline Matrix<T>::~Matrix()
 {
-
+	unsigned n = getRows();
+	for (unsigned i = 0; i < n; i++)
+	{
+		delete[] elements[i];
+	}
+	delete[] elements;
 }
 
 template<typename T>
