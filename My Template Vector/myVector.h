@@ -4,6 +4,7 @@
 template <typename T>
 class myVector
 {
+//private:
 	T *arr;
 	unsigned size;
 	unsigned cap;
@@ -32,6 +33,8 @@ public:
 
 	myVector& operator=(const myVector &v); //operator =
 	const T operator[](unsigned n); // operator []
+	void operator+=(const T element); //operator +=
+	void operator-=(const unsigned count); //operator -=
 
 	void pushBack(const T element);
 	const T popBack();
@@ -137,6 +140,21 @@ const T myVector<T>::operator[](unsigned n)
 	{
 		std::cout << "out of vector limits\n";
 		return int();
+	}
+}
+template<typename T>
+inline void myVector<T>::operator+=(const T element)
+{
+	pushBack(element);
+}
+template<typename T>
+inline void myVector<T>::operator-=(const unsigned count)
+{
+	unsigned currCount(0);
+	while (size > 0 && currCount < count)
+	{
+		currCount++;
+		popBack();
 	}
 }
 template <typename T>
