@@ -21,8 +21,11 @@ void test()
 	std::cout << "~Testing begin(): " << v.begin() << '\n';
 	std::cout << "~Testing begin(): " << v.end() << '\n';
 
-	for (size_t i = 0; i < 20; i++) v.remove(0);
-	std::cout << "\n~Erasing first 20 elements:\n" << v;
+	for (size_t i = 0; i < 10; i++) v.remove(0);
+	std::cout << "\n~Erasing first 10 elements:\n" << v;
+
+	v -= (10);
+	std::cout << "\n~Erasing last 10 elements:\n" << v;
 
 	myVector<char> newVec(v);
 	newVec.popBack();
@@ -30,7 +33,8 @@ void test()
 	std::cout << "\n~Testing copy constructor: " << newVec;
 
 	myVector<char>anotherVec = newVec;
-	std::cout << "~Testing operator =: " << anotherVec;
+	anotherVec += 'Z';
+	std::cout << "~Testing operator = and operator +=: " << anotherVec;
 
 	myVector<int> lastVec(10);
 	std::cout << "~Testing constructor with parameter: " << lastVec;
