@@ -6,8 +6,10 @@ Your task is to study the code in **Main.cpp**, then create a file called **Find
 You should submit a single **.zip** file for this task, containing ONLY the **Find.h** file. The Judge system has a copy of the **Main.cpp** file and will compile it along with your **Find.h** file in the same directory.
 
 To correctly use the **Company** definition, without interfering with its usage by **Main.cpp**, use the following structure for the **Find.h** file:
+
+#### Find.h
+
 ```cpp
-Find.h
 #ifndef FIND_H
 #define FIND_H
 
