@@ -42,8 +42,8 @@ Value|42|'u'|'n'|'i'|'\0'|2|'I'|'K'|'S'|'N'|13|'j'|'o'|'r'|'o'|'\0'|1|'G'|'G'
 
 And their representation in the input for the task will be:
 
-**42 117 110 105 0 2 73 75 83 78**
-**13 106 111 114 111 0 1 71 71**
+**42 117 110 105 0 2 73 75 83 78**<br>
+**13 106 111 114 111 0 1 71 71**<br>
 **end**
 
 Your task is to create a file called **CompanyMemoryUtils.h** (which **MemoryMain.cpp** includes), containing the function **readCompaniesFromMemory**, implemented in such a way that MemoryMain.cpp compiles successfully and works as described above – i.e. your task is to read the memory, which will be in the format described above, and return a **vector<Company>** containing the companies that were written in that memory.
