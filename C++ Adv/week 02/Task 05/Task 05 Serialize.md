@@ -64,6 +64,7 @@ while (companiesIn >> company) { }
 
 #### Examples
 Input|Output (NOTE: single line)
+-|-
 42 uni (I.K.,S.N.)<br>13 joro (G.G.)<br>end|	2 42 117 110 105 0 2 73 75 83 78 13 106 111 114 111 0 1 71 71
 188 icyha (B.Q.,H.P.,F.S.)<br>58 uadel (S.A.,C.H.,L.T.)<br>end|2 188 105 99 121 104 97 0 3 66 81 72 80 70 83 58 117 97 100 101 108 0 3 83 65 67 72 76 84
 13 joro (G.G.)<br>end|1 13 106 111 114 111 0 1 71 71
